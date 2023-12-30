@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    >
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Select a First Prime number"
+        android:textSize="20dp" />
+
+    <NumberPicker
+        android:id="@+id/np"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Select a Second Prime number"
+        android:textSize="20dp" />
+
+    <NumberPicker
+        android:id="@+id/np2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text=" "
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/ShorStep1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 1 \n\nLet use your key as N:"
+        android:textSize="20dp" />
+
+    <NumberPicker
+        android:id="@+id/N"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/ShorStep2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 2 \n \n Choose randomly a number between 1 and N.\n\n Call this number 'k’."
+        android:textSize="20dp" />
+
+    <NumberPicker
+        android:id="@+id/K"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/ShorStep3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 3 \n \n Find smallest positive integer 'r' such that\n
+        if f(x) = kˣ mod N,\n\n
+        then f(a) = f(a+r)\n"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/ShorStep3_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 3.1 \n \nDefine a new variable q = 1"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/ShorStep3_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 3.2\n\n
+Find (q×k) mod N.\n \n If the remainder is 1, proceed to Step 3.3. \n If not, set the value of 'q' to the value of the remainder we got. \n
+Repeat this step till you get remainder = 1 \nKeep track of 'how many times' you did the transformation (r).\n
+Remember to change the value of 'q' every time."
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/ShorStep3_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 3.3\n\n
+The number of transformations you did in Step 3.2 is your value of r"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/ShorStep4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 4\n\n
+If r is odd, go back to Step 2 and choose a different value of k.\n
+Eg- r = 4 is even, so we move on."
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/ShorStep5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 5 \n\n
+Define p = remainder in (r/2)th transformation.\n\n
+        If p + 1 = N, then go back to Step 2 and choose a different value of k.\n\n
+        If not, proceed to Step 7.\n\n
+    Eg-\n
+        p will be the remainder in (4/2)th, i.e., 2nd transformation.\n\n
+        p = 4\n\n
+        4 + 1 = 5 is not equal to 15\n\n
+        So we can proceed."
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/ShorStep6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Step 6 \n\n
+This is the final step. The factors of N are \n\n
+                f₁ = GCD (p+1, N)\n\n
+                f₂ = GCD (p-1, N)\n\n
+        Eg-\n
+                f₁ = GCD (p+1, N)\n\n
+                   = GCD (5, 15)\n\n
+                   = 5\n\n
+                f₂ = GCD (p-1, N)\n\n
+                   = GCD (3, 15)\n\n
+                   = 3\n\n
+        Therefore, 3 and 5 are factors of 15."
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text=""
+        android:textSize="20dp" />
+</LinearLayout>
+</ScrollView>
