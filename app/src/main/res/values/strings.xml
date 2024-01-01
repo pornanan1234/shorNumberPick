@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">numberPicker</string>
+    <string name="Shor4">Step 4\n\n
+If r is odd, go back to Step 2 and choose a different value of k.\n
+in our case  r = ToBeReplace1 is even, so we move on.</string>
+    <string name="Shor5">Step 5 \n\n
+Define p = remainder in (r/2)th transformation.\n\n
+        If p + 1 = N, then go back to Step 2 and choose a different value of k.\n\n
+        If not, proceed to Step 7.\n\n
+</string>
+    <string name="Shor6">Step 6 \n\n
+This is the final step. The factors of N are \n\n
+                f₁ = GCD (p+1, N)\n\n
+                f₂ = GCD (p-1, N)\n\n
+        </string>
+
 </resources>
